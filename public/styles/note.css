@@ -1,0 +1,66 @@
+.form-session-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.title{
+    font-weight: 600;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    padding-left: 35px;
+}
+.form-session{
+    width: 650px;
+    background-color: transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    border: 1px solid #ccc;
+    padding: 20px 25px;
+}
+.input-box {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.input-box textarea{
+    resize: none;
+}
+.input-box input, .input-box textarea{
+    margin-bottom: 10px;
+    padding: 15px 36px 15px 25px;
+    border-radius: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-color: aliceblue;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+}
+
+.input-box span{
+    position: absolute;
+    right: 30px;
+    top:25px;
+}
+.input-box label{
+    position: absolute;
+    left: 30px;
+    top:-15px;
+    font-size:  14px;
+    font-weight: lighter;
+    transition: .5s;
+}
+.submit-button{
+    width: 95%;
+    padding: 10px;
+    margin-left: 2%;
+    border-color: aliceblue;
+    border-radius: 20px;
+    font-weight: bolder;
+    background-color: rgb(78, 140, 188);
+    color: white;
+}
+.submit-button:hover{
+    background-color: rgb(78, 140, 188, 0.8);
+}

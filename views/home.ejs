@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <div>
+        <%-include("header.ejs") %>
+        <div class="lists-container">
+            <ul class="lists">
+                <% if(locals.tasks) { %>
+                <% tasks.forEach(task => { %>
+                    <li class="list" 
+                    <% if(!locals.trash_bin) { %>
+                    onclick="location.href=`/edit/<%= task.id %>`;"  
+                    <% } %>
+                    style="cursor:pointer;">
+                        <p class="type title-name">Title: </p>
+                        <p class="title truncate "><%= task.title %></p>
+                        <p class="type">Content: </p>
+                        <p class="content truncate"><%= task.content %></p>
+                        <p class="due"> <%= task.due %></p>
+                        <% if(locals.trash_bin) { %>
+                            <form action="/delete" method="POST">
+                                <input type="hidden" name="id" value="<%= task.id %>">
+                                <button class="delete-button" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2" viewBox="0 0 16 16">
+                                    <path d="M14 3a.7.7 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.7.7 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2M3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5s-3.69-.311-4.785-.793"/>
+                                  </svg></button>       
+                            </form>
+                        <%} else {%>
+                            <form action="/complete" method="POST">
+                                <input type="hidden" name="id" value="<%= task.id %>">
+                                <button class="delete-button" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                                    <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"/>
+                                    <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/>
+                                </svg></button>       
+                            </form>
+                        <%}%>
+                    </li>
+              
+                <% }) %>
+                <%} %>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script src="/reload/reload.js"></script>
+</html>

@@ -1,0 +1,65 @@
+
+.lists-container{
+    margin-top: 70px;
+}
+ul {
+    list-style-type: none;
+}
+  
+.lists{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 25px;
+}
+
+.list{
+    position: relative;
+    background-color: rgb(246, 246, 246);
+    /* padding: 15px 20px 20px 20px; */
+    border-radius: 20px;
+    overflow: hidden;  
+}
+.type{
+    padding: 5px 35px 0px 35px;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+.title-name{
+    background-color: rgb(225, 233, 239);
+}
+.title{
+    background-color: rgb(225, 233, 239);
+    padding: 0 25px 10px 25px;
+    margin: 0;
+}
+.truncate {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.content {
+    padding: 0px 25px;
+    position: relative;
+    font-size: 1em;
+    margin-bottom: 55px;
+}
+.due{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 0.8em;
+    color: #7b7878;
+}
+.delete-button{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    color:#ffffff;
+    border: none;
+    background-color: rgba(137, 150, 162, 0.907);
+    border-radius: 5px;
+}
+  
